@@ -1,0 +1,165 @@
+// Color palette
+$swatch_1: #3d434b;
+$swatch_2: #aecaff;
+$swatch_3: #6495ED;
+$swatch_4: #dce0e3;
+$swatch_5: #9a9fa7;
+
+//Fonts
+$openSans: 'Open Sans', sans-serif;
+
+//Variables
+$gameSquareBorder: 0.4rem solid $swatch_1;
+$gameSquareMargin: 0.4rem;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+html {
+    font-family: $openSans;
+    font-size: 16px;
+    background: linear-gradient(-45deg, $swatch_2, $swatch_3);
+    background-size: 400%, 400%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: $swatch_4;
+}
+
+body {
+    max-width: 40%;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.main-container {
+    background-color: $swatch_1;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.header {
+    font-size: 1.5rem;
+    margin: 0.1rem 0.1rem 3rem 0.1rem;
+    h1 {
+        margin: 0;
+    };
+}
+
+.game-selector {
+    min-width: 8rem;
+    min-height: 3rem;
+    margin: 1rem;
+}
+
+.infoDisplay {
+    display: flex;
+    // border: 1px solid red;
+    max-width: 390px;
+    min-width: 390px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.p1 {
+    background-color: #9a9fa732;
+    border-top: 1px solid $swatch_5;
+    border-left: 1px solid $swatch_5;
+    border-right: 1px solid $swatch_5;
+    width: 6rem;
+}
+.p2 {
+    background-color: #9a9fa732;
+    border-top: 1px solid $swatch_5;
+    border-left: 1px solid $swatch_5;
+    border-right: 1px solid $swatch_5;
+    width: 6rem;
+}
+
+.currentP {
+    background-color: $swatch_3 !important;
+}
+
+.button {
+    width: 5rem;
+    height: 2rem;
+    background-color: $swatch_5;
+    color: white;
+}
+
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    // outline: 0.1rem solid green;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 400px;
+    margin-bottom: 3rem;
+
+    // IDENTIFIER FOR CODING REMOVE FOR FINAL
+    *:hover {
+        outline: 0.2rem solid $swatch_3;
+    }
+
+}
+
+.game-square {
+    // outline: 0.3rem solid red;
+    font-size: 7rem;
+    text-shadow: 0.1rem 0.1rem 0.3rem #6495ED;
+    background-color: #9a9fa732;
+}
+#c1 {
+    margin-right: $gameSquareMargin;
+    margin-bottom: $gameSquareMargin;
+}
+#c2 {
+    margin-bottom: $gameSquareMargin;
+}
+#c3 {
+    margin-left: $gameSquareMargin;
+    margin-bottom: $gameSquareMargin;
+}
+#c4 {
+    margin-right: $gameSquareMargin;
+}
+#c5 {
+    //MID
+}
+#c6 {
+    margin-left: $gameSquareMargin;
+}
+#c7 {
+    margin-top: $gameSquareMargin;
+    margin-right: $gameSquareMargin;
+}
+#c8 {
+    margin-top: $gameSquareMargin;
+}
+#c9 {
+    margin-left: $gameSquareMargin;
+    margin-top: $gameSquareMargin;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    p {
+        color: $swatch_1;
+    }
+    span {
+        color: red;
+    }
+}
+
