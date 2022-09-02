@@ -1,9 +1,11 @@
 //Player 1 is 0, Player 2 is 1
+// VARIABLES
 let player = 0;
 const gameSquares = document.querySelectorAll('.game-square');
 let playerOneElement = document.getElementById('p1');
 let playerTwoElement = document.getElementById('p2');
 
+// CHECKS WHO THE CURRENT PLAYER IS IN THE START
 const checkCurrentPlayer = () => {
     if (player === 0) {
         playerOneElement.classList.add('currentP');
@@ -13,6 +15,7 @@ const checkCurrentPlayer = () => {
 }
 checkCurrentPlayer();
 
+// SWITCHES PLAYERS
 const switchPlayer = () => {
     if (player === 0) {
         playerTwoElement.classList.add('currentP');
@@ -29,8 +32,8 @@ const switchPlayer = () => {
     }
 };
 
+// ADDS EVENT LISTENERS TO EACH SQUARE AND PLACES CURRENT PLAYERS SYMBOL THEN RUNS SWITCH PLAYERS FUNCTION
 gameSquares.forEach(square => square.addEventListener('click', squareEvent));
-
 function squareEvent () {
     console.log('Clicked Square');
     let xSymbol = document.createTextNode('X');
@@ -48,6 +51,7 @@ function squareEvent () {
     }
 };
 
+// CHECK WIN CONDITION BY CHECKING AN ARRAY OF POSSIBLE CONDITIONS AND MAKING SURE IF THE CONDITIONS HAVE THE SAME SYMBOL, IF TRUTHY THEN IT RETURNS THE WINNING PLAYER BASED ON THE SYMBOL.
 const checkWinCondition = () => {
     let gameWon = false;
     let playerWon = document.getElementById('playerWon');
@@ -83,7 +87,6 @@ const checkWinCondition = () => {
     ];
    
     for (let i = 0; i < winConditions.length; i++) {
-        
         const conditions = winConditions[i];
         if (conditions[0] == 'X' && conditions[1] == 'X' && conditions[2] == 'X') {
             console.log('Player X Won');
@@ -108,10 +111,12 @@ const checkWinCondition = () => {
     }
 };
 
+// REMOVES ALL EVENT LISTENERS MAKING THE GAME UNPLAYABLE
 const stopGame = () => {
     gameSquares.forEach(square => square.removeEventListener('click', squareEvent));
 };
 
+// RELOADS WEBPAGE
 document.getElementById('restartButton').addEventListener('click', function restart () {
     location.reload();
 });
